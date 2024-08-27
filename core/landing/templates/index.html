@@ -1,0 +1,280 @@
+{% extends "base.html"%}
+{% load static %}
+{% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  .seccion-principal {
+    padding: 100px 0;
+    background-color: #fcf9f7;
+  }
+
+  .subtitulo {
+    color: #c4a484;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .titulo-principal {
+    font-size: 43px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #212529;
+  }
+
+  .descripcion-principal {
+    font-size: 16px;
+    color: #6c757d;
+    margin-bottom: 30px;
+  }
+
+  .botones-principales .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+
+  .botones-principales .btn-primario {
+    background-color: #416051;
+    border-color: #416051;
+    color: #fff;
+    font-size:14px;
+  }
+
+  .btn-primario:hover{
+    background-color: #fcf9f7;
+    border-color: #416051;
+    color:#416051;
+  }
+
+  .botones-principales .btn-borde-secundario {
+    border-color: #c4a484;
+    color: #c4a484;
+    font-size:14px;
+    background-color: #fcf9f7;
+  }
+  .btn-borde-secundario:hover{
+    background-color: #c4a484;
+    border-color: #c4a484;
+    color:#ffffff;
+  }
+
+  .cuadrantes-imagenes {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columnas flexibles*/
+    grid-template-rows: 1fr 1fr;   /* 2 filas flexibles*/
+    height: 100%;                   
+    gap: 10px;                      
+  }
+
+  .cuadrante {
+    position: relative;
+    width: 100%;
+    height: 100%;    
+  }
+
+  .superpuesta1 {
+    position: absolute;
+    top: -250px;
+    left: 250px;
+    z-index: 2;  
+    width: 150%;         /* Aumenta el ancho de la imagen al 120% de su tamaño original (ajusta este valor según sea necesario) */
+    height: 180%;
+  }
+
+  .superpuesta2 {
+    position: absolute;
+    top: 0px; /* Adjust this value */
+    left: 20px; /* Adjust this value */
+    z-index: 1;
+    width: 130%;         /* Aumenta el ancho de la imagen al 120% de su tamaño original (ajusta este valor según sea necesario) */
+    height: 160%;
+  }
+  .img-fluid{
+    border-radius: 15px;
+  }
+  .superpuesta1-responsive {
+    display: none; /* Ocultar la imagen por defecto */
+}
+/* Imagen grande: Mostrar en pantallas grandes */
+.img-large {
+    display: block;
+}
+
+/* Imagen responsiva: Ocultar en pantallas grandes */
+.img-responsive {
+    display: none;
+}
+
+/* Reglas para pantallas medianas y pequeñas */
+@media (max-width: 991.98px) {
+    /* Ocultar la imagen grande */
+    .img-large {
+        display: none;
+    }
+    
+    /* Mostrar la imagen responsiva */
+    .img-responsive {
+        display: block;
+        margin-top: 20px; /* Espacio entre texto e imagen */
+    }
+}
+.firma {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem; /* Ajusta el tamaño según sea necesario */
+  color: #333; /* Ajusta el color según el diseño */
+}
+
+
+</style>
+<section class="seccion-principal">
+  <div class="container">
+    <div class="row align-items-center ftco-animate">
+      <div class="col-lg-6 col-md-12">
+        <p class="subtitulo">Seja bem-vindo</p>
+        <h1 class="titulo-principal"style="color:#352c25">Apoio Psicológico Para Adultos, Adolescentes e Crianças.</h1>
+        <p class="descripcion-principal">Oferecemos um ambiente acolhedor e profissional para ajudar você a enfrentar desafios.</p>
+        <div class="botones-principales">
+            <a href="#" class="btn btn-primario">Nossos Serviços</a>
+            <a href="#" class="btn btn-borde-secundario">Saiba Mais</a>
+        </div>
+        <img src="{% static 'images/clinica1.jpg' %}" class="img-fluid img-responsive" alt="Imagen Index 3">
+      </div>
+      <div class="col-lg-6 col-md-12 ftco-animate"> 
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-6">         
+                <div class="cuadrantes-imagenes">
+                  <div class="cuadrante superior-izquierda"></div>
+                  <div class="cuadrante superior-derecha superpuesta1 mt-4">
+                    <img src="{% static 'images/img1.png' %}" class="img-fluid img-large" alt="Imagen Index 3">
+                  </div>
+                  <div class="cuadrante inferior-izquierda superpuesta2">
+                    <img src="{% static 'images/img2.png' %}" class="img-fluid img-large" alt="Imagen Index 3">
+                  </div>
+                  <div class="cuadrante inferior-derecha mb-4"></div>
+                </div>
+              </div>       
+          </div>     
+        </div>          
+      </div>       
+    </div>
+  </div>
+</section>
+<section class="ftco-section ftco-no-pt ftco-no-pb">
+  <div class="container">
+    <div class="row no-gutters">
+      <div class="col-md-5 p-md-5 mt-5 mt-md-0">
+        <img src="{% static 'images/index3.jpg' %}" class="img-fluid" alt="Imagen Index 3">
+        <div class="mask"></div>
+      </div>   
+      <div class="col-md-7 wrap-about py-4 py-md-5 ftco-animate">
+        <div class="heading-section mb-5">
+          <div class="pl-md-5 ml-md-5 pt-md-5">
+            <h2 class="mb-2" style="font-size: 32px;color:#352c25">A Psicoterapia como Ferramenta para uma Vida Plena e Equilibrada. </h2>
+          </div>
+        </div>
+        <div class="pl-md-5 ml-md-5 mb-5">
+          <p>A psicoterapia é um processo de desenvolvimento pessoal com múltiplos benefícios para a saúde mental e o bem-estar.</p>
+          <p>Ela promove o crescimento em várias áreas da vida, incluindo aspectos pessoais, profissionais e relacionamentos.</p>
+          <p>A prática contribui para o aprimoramento emocional, a redução do estresse e da ansiedade, o fortalecimento da autoestima, a diminuição da autocobrança, e o alívio do sofrimento psíquico. Além disso, favorece uma maior tolerância a frustrações e perdas, resultando em uma vida de melhor qualidade e bem-estar.</p>
+          <div class="founder d-flex align-items-center mt-5">
+             <div class="text pl-3">
+              <h2 class="mb-0 firma"style="color:#352c25">Elizabeth Macedo</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="ftco-section ftco-services"style="background-color: #fff;">
+  <div class="container">
+    <div class="row justify-content-center mb-5 pb-2">
+      <div class="col-md-8 text-center heading-section ftco-animate">
+        <h2 class="mb-4"style="color:#352c25">Como eu posso ajudar</h2>
+       {% comment %} <p>Como eu posso ajudar</p> {% endcomment %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 d-flex services align-self-stretch p-4 ftco-animate">
+        <div class="media block-6 d-block text-center">
+          <div class="icon d-flex justify-content-center align-items-center" style="background-color: #7da08f;">
+            <img src="{% static 'images/fear.png' %}" alt="Descripción de la imagen" style="width: 50px; height: 50px;">
+          </div>
+          <div class="media-body p-2 mt-3">
+            <h3 class="heading">Transtornos de Ansiedade</h3>
+            <p>Abordagem especializada para reduzir sintomas de ansiedade e melhorar a qualidade de vida.</p>
+          </div>
+        </div>      
+      </div>
+      <div class="col-md-6 d-flex services align-self-stretch p-4 ftco-animate">
+        <div class="media block-6 d-block text-center">
+          <div class="icon d-flex justify-content-center align-items-center" style="background-color: #7da08f;">
+            <img src="{% static 'images/depre.png' %}" alt="Descripción de la imagen" style="width: 50px; height: 50px;">
+          </div>
+          <div class="media-body p-2 mt-3">
+            <h3 class="heading">Transtornos Depressivos</h3>
+            <p>Tratamento personalizado para aliviar sintomas depressivos e promover o bem-estar emocional.</p>
+          </div>
+        </div>      
+      </div> 
+      <div class="col-md-6 d-flex services align-self-stretch p-4 ftco-animate">
+        <div class="media block-6 d-block text-center">
+          <div class="icon d-flex justify-content-center align-items-center" style="background-color: #7da08f;">
+            <img src="{% static 'images/perso.png' %}" alt="Descripción de la imagen" style="width: 50px; height: 50px;">
+          </div>
+          <div class="media-body p-2 mt-3">
+            <h3 class="heading">Transtornos de Personalidade</h3>
+            <p>Estratégias personalizadas para entender e lidar com padrões de comportamento complexos.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 d-flex services align-self-stretch p-4 ftco-animate">
+        <div class="media block-6 d-block text-center">
+          <div class="icon d-flex justify-content-center align-items-center" style="background-color: #7da08f;">
+            <img src="{% static 'images/atenc.png' %}" alt="Descripción de la imagen" style="width: 50px; height: 50px;">
+          </div>
+          <div class="media-body p-2 mt-3">
+            <h3 class="heading">Déficit de Atenção</h3>
+            <p>Apoio focado para melhorar a concentração e o desempenho em diversas áreas da vida.</p>
+          </div>
+        </div>      
+      </div>
+      {% comment %} <div class="col-md-4 d-flex services align-self-stretch p-4 ftco-animate">
+        <div class="media block-6 d-block text-center">
+          <div class="icon d-flex justify-content-center align-items-center">
+            <span class="flaticon-tooth-1"></span>
+          </div>
+          <div class="media-body p-2 mt-3">
+            <h3 class="heading">Periodontia</h3>
+            <p>Tratamento de doenças das gengivas e tecidos de suporte dos dentes.</p>
+          </div>
+        </div>      
+      </div>
+      <div class="col-md-4 d-flex services align-self-stretch p-4 ftco-animate">
+        <div class="media block-6 d-block text-center">
+          <div class="icon d-flex justify-content-center align-items-center">
+          <span class="flaticon-dental-floss"></span>
+          </div>
+          <div class="media-body p-2 mt-3">
+            <h3 class="heading">Prevenção e manutenção</h3>
+            <p>Cuidados essenciais para prevenir problemas dentários e manter a saúde bucal.</p>
+          </div>
+        </div>      
+      </div> {% endcomment %}
+    </div>
+  </div>
+</section>
+{% endblock %}
+{% block scrips%}
+<script>
+  document.addEventListener("DOMContentLoaded",function(){
+    $('.nav-link').removeClass('active');
+    $('#index-navlink').addClass('active');
+   
+  });
+  
+
+</script>
+{% endblock %}

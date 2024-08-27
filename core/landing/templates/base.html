@@ -1,0 +1,193 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Elizabeth Macedo">
+    
+    <title>Elizabeth Macedo</title>
+    <link href="{% static 'images/LogoChico.png' %}" rel="icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+    
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block head %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% endblock %}
+  
+  </head>
+  <style>
+    .navbar {
+      box-shadow: 0 4px 35px -5px rgba(0, 0, 0, 0.3);
+    }
+    .hero {
+      padding: 100px 0;
+      background-color: #352c25;
+  }
+  .boton-nav .btn{
+    padding: 10px 20px;
+    font-size: 13px;
+    margin-left: 20px;
+    background-color: #c4a48e;
+    border-color: #c4a48e;
+    color: #fff;
+  }
+  .boton-nav .btn:hover{    
+    background-color: #ffffff;
+    border-color: #c4a48e;
+    color: #c4a48e;
+  }
+  
+  </style>
+  <body>    
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" id="ftco-navbar" style="background-color: #ffffff;">
+      <div class="container d-flex justify-content-between align-items-center">
+        <a class="navbar-brand" href="#">
+            <img src="{% static 'images/logo4.png' %}" alt="Logo" style="height: 50px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
+        <div class="collapse navbar-collapse mt-3 mb-3 justify-content-end" id="ftco-nav">
+          <ul class="navbar-nav">
+            <li class="nav-item me-5" id="index-navlink"><a href='{% url "index" %}' class="nav-link pl-0">Home</a></li>
+            {% comment %} <li class="nav-item me-5" id="about-navlink"><a href='{% url "about" %}' class="nav-link">Clínica</a></li> {% endcomment %}
+            <li class="nav-item me-5" id="doctors-navlink"><a href='{% url "doctors" %}' class="nav-link">Sobre mim</a></li>
+            <li class="nav-item" id="services-navlink"><a href='{% url "services" %}' class="nav-link">Serviços</a></li>
+            {% comment %} <li class="nav-item" id="blog-navlink"><a href='{% url "blog" %}' class="nav-link">Novidades</a></li> {% endcomment %}
+            <li class="nav-item" id="contact-navlink"><a href='{% url "contact" %}' class="nav-link">Contato</a></li>
+            <li class="nav-item">
+              <div class="boton-nav">
+                <a href="#" class="btn btn-primario">Agende um horário</a>              
+            </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>   
+    {% block content%}
+    {% endblock %}
+    <div id="whatsapp-button" class="btn-lg animate__animated animate__heartBeat">
+      <a href="https://api.whatsapp.com/send?phone=+5555996119565&text=Olá! Envie-nos uma mensagem." target="_blank">
+          <img src="{% static 'images/whatsapp.png' %}" alt="WhatsApp" />
+      </a>
+    </div>		
+    <footer class="ftco-footer ftco-section" style="background-color:#c4a48e">
+      <div class="container">
+        <div class="row mb-1">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-5">
+              <h2 class="ftco-heading-2 logo">Psicoterapia & Bem-Estar</h2>
+              <p>A psicoterapia contribui para um bem-estar integral, abordando questões emocionais e promovendo uma vida equilibrada e satisfatória.</p>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-5 ml-md-4">
+              <h2 class="ftco-heading-2">Links</h2>
+              <ul class="list-unstyled">
+                <li><a  href='{% url "index" %}'><span class="ion-ios-arrow-round-forward mr-2"></span>Home</a></li>
+                {% comment %} <li><a  href='{% url "about" %}'><span class="ion-ios-arrow-round-forward mr-2"></span>Sobre Nós</a></li> {% endcomment %}
+                <li><a  href='{% url "doctors" %}'><span class="ion-ios-arrow-round-forward mr-2"></span>Sobre mim</a></li>
+                <li><a  href='{% url "services" %}'><span class="ion-ios-arrow-round-forward mr-2"></span>Serviços</a></li>
+                <li><a  href='{% url "contact" %}'><span class="ion-ios-arrow-round-forward mr-2"></span>Contato</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-5">
+              <div class="ftco-footer-widget mb-5 ml-md-4">
+                <h2 class="ftco-heading-2">Serviços</h2>
+                <ul class="list-unstyled">
+                  <li><a href='{% url "services" %}'><span class="ion-ios-arrow-round-forward mr-2"></span>Transtornos de Ansiedade</a></li>
+                  <li><a href='{% url "services" %}'><span class="ion-ios-arrow-round-forward mr-2"></span>Transtornos Depressivos</a></li>
+                  <li><a href='{% url "services" %}'><span class="ion-ios-arrow-round-forward mr-2"></span>Transtornos de Personalidade</a></li>
+                  <li><a href='{% url "services" %}'><span class="ion-ios-arrow-round-forward mr-2"></span>Construção de autoestima</a></li>
+                  {% comment %} <li><a href='{% url "services" %}'><span class="ion-ios-arrow-round-forward mr-2"></span>Prevenção</a></li> {% endcomment %}
+                </ul>                          
+              </div>           
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-5">
+              <div class="ftco-footer-widget mb-5 ml-md-4">
+                <h2 class="ftco-heading-2">Contato</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#"><span class="icon icon-map-marker mr-2"></span>MEDPLEX , R. Gomes Jardim 201, sala 513 -Torre saúde- POA, RS</a></li>
+                  <li><a href="#"><span class="icon icon-phone mr-2"></span>(55) 996119565</a></li>
+                  <li><a href="#"><span class="icon icon-envelope mr-2"></span>dratainakoster@gmail.com</a></li>   
+                  <i class="bi bi-whatsapp"></i>         
+                </ul>
+                <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-1">
+                  <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                  <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                  <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>                 
+                </ul>
+              </div>              
+            </div>
+          </div>          
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | </i> by <a href="https://www.innobrar.com.br" target="_blank">Innobrar Solutions</a>
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+        </div>
+      </div>
+    </footer>
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+  <script src="{% static 'js/scrollax.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var navbar = document.getElementById("ftco-navbar");
+      var changeColorOnScroll = 25; 
+      window.addEventListener("scroll", function() {
+        
+        if (window.scrollY > changeColorOnScroll) {
+          navbar.style.backgroundColor = "#ffffff"; 
+        } else {
+          navbar.style.backgroundColor = "#ffffff"; 
+        }
+      });
+    });
+  </script>
+  {% block scrips %} 
+  
+  {% endblock %} 
+  </body>
+</html>
