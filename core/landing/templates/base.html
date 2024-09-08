@@ -42,28 +42,28 @@
     }
     .hero {
       padding: 100px 0;
-      background-color: #352c25;
+      background-color: #2F3F3E;
   }
   .boton-nav .btn{
     padding: 10px 20px;
     font-size: 13px;
     margin-left: 20px;
-    background-color: #c4a48e;
-    border-color: #c4a48e;
+    background-color: #435958;
+    border-color: #435958;
     color: #fff;
   }
   .boton-nav .btn:hover{    
     background-color: #ffffff;
-    border-color: #c4a48e;
-    color: #c4a48e;
+    border-color: #435958;
+    color: #435958;
   }
   
   </style>
   <body>    
     <nav class="navbar navbar-expand-lg navbar-light sticky-top" id="ftco-navbar" style="background-color: #ffffff;">
       <div class="container d-flex justify-content-between align-items-center">
-        <a class="navbar-brand" href="#">
-            <img src="{% static 'images/logo4.png' %}" alt="Logo" style="height: 50px;">
+        <a class="navbar-brand" href='{% url "index" %}' >
+            <img src="{% static 'images/logo2.png' %}" alt="Logo" style="height: 50px;">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> Menu
@@ -78,9 +78,9 @@
             <li class="nav-item" id="contact-navlink"><a href='{% url "contact" %}' class="nav-link">Contato</a></li>
             <li class="nav-item">
               <div class="boton-nav">
-                <a href="#" class="btn btn-primario">Agende um horário</a>              
-            </div>
-            </li>
+                <a class="btn btn-primario" href="https://api.whatsapp.com/send?phone=5527999819715&text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta." class="btn btn-primario" target="_blank">Agende um horário</a>              
+              </div>
+            </li>            
           </ul>
         </div>
       </div>
@@ -88,11 +88,11 @@
     {% block content%}
     {% endblock %}
     <div id="whatsapp-button" class="btn-lg animate__animated animate__heartBeat">
-      <a href="https://api.whatsapp.com/send?phone=+5555996119565&text=Olá! Envie-nos uma mensagem." target="_blank">
+      <a href="https://api.whatsapp.com/send?phone=+5527999819715&text=Olá! Envie-nos uma mensagem." target="_blank">
           <img src="{% static 'images/whatsapp.png' %}" alt="WhatsApp" />
       </a>
     </div>		
-    <footer class="ftco-footer ftco-section" style="background-color:#c4a48e">
+    <footer class="ftco-footer ftco-section" style="background-color:#435958">
       <div class="container">
         <div class="row mb-1">
           <div class="col-md">
